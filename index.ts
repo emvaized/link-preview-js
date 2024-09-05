@@ -45,6 +45,12 @@ function getTitle(doc: cheerio.Root) {
   if (!title) {
     title = doc(`title`).text();
   }
+  if (!title) {
+    title = doc(`h1`).text();
+  }
+  if (!title){
+    title = doc(`h2`).text();
+  }
   return title;
 }
 
