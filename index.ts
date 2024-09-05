@@ -1,5 +1,4 @@
 import cheerio from "cheerio";
-import { fetch } from "cross-fetch";
 import AbortController from "abort-controller";
 import urlObj from "url";
 import { CONSTANTS } from "./constants";
