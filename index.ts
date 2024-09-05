@@ -56,10 +56,14 @@ function getSiteName(doc: cheerio.Root) {
 }
 
 function getDescription(doc: cheerio.Root) {
-  const description =
+  let description =
     metaTagContent(doc, `description`, `name`) ||
     metaTagContent(doc, `Description`, `name`) ||
     metaTagContent(doc, `og:description`, `property`);
+
+  if (!description){
+    description = doc(`p`).text();
+  }
   return description;
 }
 
