@@ -31,7 +31,7 @@
   "repository": "https://github.com/ospfranco/link-preview-js",
   "dependencies": {
     "abort-controller": "^3.0.0",
-    "cheerio": "1.0.0-rc.11",
+    "cheerio": "^1.0.0",
     "url": "0.11.0"
   },
   "files": [
@@ -39,7 +39,7 @@
   ],
   "devDependencies": {
     "@skypack/package-check": "^0.2.2",
-    "@types/cheerio": "0.22.24",
+    "@types/cheerio": "^0.22.35",
     "@types/jest": "^28.1.4",
     "jest": "^28.1.2",
     "prettier": "2.7.1",

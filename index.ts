@@ -1,4 +1,4 @@
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
 import AbortController from "abort-controller";
 import urlObj from "url";
 import { CONSTANTS } from "./constants";
