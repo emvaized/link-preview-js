@@ -123,13 +123,26 @@ function getImages(
         dic = {};
         images = [];
         nodes.each((_: number, node: cheerio.Element) => {
-          if (node.type === `tag`) src = node.attribs.src;
-          if (src && !dic[src]) {
-            dic[src] = true;
-            // width = node.attribs.width;
-            // height = node.attribs.height;
-            images.push(urlObj.resolve(rootUrl, src));
-          }
+          if (node.type === `tag`) {
+            src = node.attribs.src;
+
+            if (src && !dic[src]) {
+              dic[src] = true;
+  
+              /// filter out images which don't fit for thumbnail
+              const width = parseInt(node.attribs.width);
+              const height = parseInt(node.attribs.height);
+
+              let addImg = true;
+              if (width && height){
+                if (width / height > 3 || height / width > 3 || height < 16) {
+                  addImg = false;
+                }
+              }
+              if (addImg)
+                images.push(urlObj.resolve(rootUrl, src));
+            }
+          } 
         });
       }
     }
