@@ -39,7 +39,6 @@
   ],
   "devDependencies": {
     "@skypack/package-check": "^0.2.2",
-    "@types/cheerio": "^0.22.35",
     "@types/jest": "^28.1.4",
     "jest": "^28.1.2",
     "prettier": "2.7.1",
