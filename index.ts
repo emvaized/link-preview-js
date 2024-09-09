@@ -478,10 +478,6 @@ export async function getLinkPreview(
     headers[key] = header;
   });
 
-  // if (response.body)
-  //   parseStreamResponse(response.body);
-  // fetchUrlResponse(fetchUrl);
-
   const normalizedResponse: IPreFetchedResource = {
     url: options?.proxyUrl
       ? response.url.replace(options.proxyUrl, ``)
@@ -513,96 +509,4 @@ export async function getPreviewFromContent(
   }
 
   return parseResponse(response, options);
-}
-
-
-async function fetchUrlResponse(url: string){
-  // let resp = await cheerio.fromURL(url);
-  // console.log('fetched!');
-  // console.log(resp);
-}
-
-async function parseStreamResponse(responseStream?: ReadableStream<Uint8Array>){
-  // if (!responseStream) {
-  //   console.log('No responseStream!')
-  //   return;
-  // }
-
-  // const writeStream = cheerio.stringStream({}, (err, $) => {
-  //   if (err) {
-  //     // Handle error
-  //     console.log('Error: ', err.message)
-  //   }
-  
-  //   console.log($('title').text());
-  //   console.log('Cheerio catched chunk');
-  //   // Output: Hello, world!
-  // });
-
-  // const r = responseStream.getReader();
-  // const stream = new Readable({
-  //   async read(){
-  //     const {done, value } = await r.read();
-  //     if (done){
-  //       this.push(null);
-  //     } else {
-  //       this.push(Buffer.from(value));
-  //     }
-  //   }
-  // });
-
-
-  // stream.pipe(writeStream);
-
-  // return;
-
-  ////////
-
-
-  // const reader = responseStream.getReader();
-  // const writableStream = new WritableStream({
-  //   write(chunk) {
-  //     console.log('Received chunk:', chunk);
-  //     // Process the chunk (which is a Uint8Array)
-  //     chunk.pipe(writeStream);
-  //   },
-  //   close() {
-  //     console.log('Stream closed');
-  //   },
-  //   abort(err) {
-  //     console.error('Stream error:', err);
-  //   }
-  // });
-  // const writer = writableStream.getWriter();
-  // while (true) {
-  //   const { done, value } = await reader.read();
-  //   if (done) break;
-  //   await writer.write(value);
-  // }
-  // writer.close();
-
-  // const reader = responseStream.getReader();
-  // const decoder = new TextDecoder();
-  // let htmlString = '';
-
-  // while (true) {
-  //   const r = await reader.read();
-  //   const { value, done } = await reader.read();
-  //   if (done) break;
-  //   const chunk = decoder.decode(value, { stream: true });
-  //   htmlString += chunk;
-  //   // console.log('Received chunk:', chunk);
-  //   // value.pipe(writeStream);
-
-  //   const writeStream = cheerio.stringStream({}, (err, $) => {
-  //     if (err) {
-  //       // Handle error
-  //     }
-    
-  //     console.log($('h1').text());
-  //     // Output: Hello, world!
-  //   });
-  // }
-
-  // console.log('Response fully received:', htmlString);
 }
