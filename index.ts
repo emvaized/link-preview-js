@@ -135,7 +135,7 @@ function getImages(
 
               let addImg = true;
               if (width && height){
-                if (width / height > 3 || height / width > 3 || height < 16) {
+                if (width / height > 3 || height / width > 3 || height < 41) {
                   addImg = false;
                 }
               }
