@@ -8,7 +8,12 @@
     "target": "es5",
     "skipLibCheck": true,
     "strict": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "cheerio": [
+          "./node_modules/cheerio/dist/browser/slim.d.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "build"]
 }
